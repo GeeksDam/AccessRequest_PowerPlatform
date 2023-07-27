@@ -1,0 +1,156 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnRecognizedIntent
+  id: main
+  intent:
+    displayName: Create Visitor Request
+    triggerQueries:
+      - Visitor Log
+      - Visitor Request
+
+  actions:
+    - kind: Question
+      id: question_RFKS06
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt: Hey Thank you what type of visit are youe expecting 
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Contractor
+              displayName: Contractor
+
+            - id: Interview
+              displayName: Interview
+
+            - id: Meeting
+              displayName: Meeting
+
+    - kind: ConditionGroup
+      id: conditionGroup_XpNLZT
+      conditions:
+        - id: conditionItem_M9izbI
+          condition: =Topic.Var1 = 'cr0f6_mainBot.topic.Untitled.main.question_RFKS06'.Contractor
+          actions:
+            - kind: Question
+              id: question_jxMcQb
+              interruptionPolicy:
+                allowInterruption: true
+
+              variable: Topic.VisitorNumber
+              prompt: Number of Visitors 
+              entity: NumberPrebuiltEntity
+
+            - kind: ConditionGroup
+              id: conditionGroup_AV4Wbs
+              conditions:
+                - id: conditionItem_syWUCb
+                  condition: =Topic.VisitorNumber > Blank()
+                  actions:
+                    - kind: SendActivity
+                      id: sendActivity_kxwR9z
+                      activity: |-
+                        Submit Bulk Request -- Create Bulk Request : https://apps.powerapps.com/play/e/de0e1636-ef11-e33f-b837-c2ab23722ea5/a/002eed77-b7fe-49b1-bba4-61069409b992?tenantId=6adf3788-3c2f-4f49-abfe-e1a139352b0b&&Number=
+                        VisitorNumber
+                        number
+
+        - id: conditionItem_jccnuS
+          condition: =Topic.Var1 = 'cr0f6_mainBot.topic.Untitled.main.question_RFKS06'.Interview
+
+        - id: conditionItem_pg33pU
+          condition: =Topic.Var1 = 'cr0f6_mainBot.topic.Untitled.main.question_RFKS06'.Meeting
+
+    - kind: Question
+      id: question_xezyHG
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.VisitorNumber
+      prompt: Number of Visitors
+      entity: NumberPrebuiltEntity
+
+    - kind: ConditionGroup
+      id: conditionGroup_LhMNKk
+      conditions:
+        - id: conditionItem_s49c9F
+          condition: =Topic.VisitorNumber > 1
+          actions:
+            - kind: SendActivity
+              id: sendActivity_UeyiGO
+              activity: "Create Bulk Request : https://apps.powerapps.com/play/e/de0e1636-ef11-e33f-b837-c2ab23722ea5/a/002eed77-b7fe-49b1-bba4-61069409b992?tenantId=6adf3788-3c2f-4f49-abfe-e1a139352b0b&&Number={Topic.VisitorNumber}"
+
+      elseActions:
+        - kind: AdaptiveCardPrompt
+          id: fbtJf9
+          card: |-
+            {
+              "type": "AdaptiveCard",
+              "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+              "version": "1.0",
+              "body": [
+            {
+                        "type": "Input.Text",
+                        "placeholder": "Please enter your Name",
+                        "id": "Name"
+                    },
+                    {
+                        "type": "Input.Text",
+                        "placeholder": "Enter email address",
+                        "id": "email"
+                    },
+                    {
+                        "type": "Input.Text",
+                        "placeholder": "Enter visit date",
+                        "id": "Date"
+                    },
+                    
+                    {
+                        "type": "ActionSet",
+                        "actions": [
+                            {
+                                "type": "Action.Submit",
+                                "title": "Submit",
+                                "style": "positive"
+                            }
+                        ]
+                    }
+            
+            
+            
+            
+            
+            
+              ]
+            }
+          output:
+            binding:
+              actionSubmitId: Topic.actionSubmitId
+              Date: Topic.Date
+              email: Topic.email
+              Name: Topic.Name
+
+          outputType:
+            properties:
+              actionSubmitId: String
+              Date: String
+              email: String
+              Name: String
+
+        - kind: InvokeFlowAction
+          id: invokeFlowAction_oaWVAd
+          input:
+            binding:
+              text: =Topic.Date
+              text_1: =Topic.email
+              text_2: =Topic.Name
+
+          output: {}
+          flowId: 05cc7923-7b26-ee11-9965-6045bdcff8f7
+
+    - kind: SendActivity
+      id: sendActivity_0JZdMP
+      activity: Access Request Created, Notification in your sent to your email address

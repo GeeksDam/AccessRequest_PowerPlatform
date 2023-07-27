@@ -1,0 +1,11 @@
+<botcomponent schemaname="cr0f6_mainBot.topic.Untitled">
+  <componenttype>9</componenttype>
+  <iscustomizable>0</iscustomizable>
+  <language>1033</language>
+  <name>Create Visitor Request</name>
+  <parentbotid>
+    <schemaname>cr0f6_mainBot</schemaname>
+  </parentbotid>
+  <statecode>0</statecode>
+  <statuscode>1</statuscode>
+</botcomponent>

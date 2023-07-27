@@ -1,0 +1,29 @@
+<bot schemaname="cr0f6_mainBot">
+  <authenticationmode>1</authenticationmode>
+  <authenticationtrigger>0</authenticationtrigger>
+  <iscustomizable>1</iscustomizable>
+  <language>1033</language>
+  <name>MainBot</name>
+  <runtimeprovider>0</runtimeprovider>
+  <synchronizationstatus>{
+  "contentVersion": 2,
+  "lastFinishedPublishOperation": {
+    "userId": "7c200314-11ee-46b5-b34d-757553b14ac3",
+    "operationStart": "2023-07-25T14:32:54.2019316Z",
+    "operationEnd": "2023-07-25T14:32:59.2339909Z",
+    "status": "Succeeded"
+  },
+  "lastPublishedOnUtc": "2023-07-25T14:32:57Z",
+  "currentSynchronizationState": {
+    "botRegistration": {
+      "applicationId": "c381d0b9-31c6-438a-abfc-231c2c098169",
+      "isAppAvailableInTenant": true
+    },
+    "provisioningStatus": "Provisioned",
+    "state": "Synchronized"
+  },
+  "lastSynchronizedOnUtc": "2023-07-25T14:35:10.8031309Z"
+}</synchronizationstatus>
+  <template>default-2.0.1</template>
+  <timezoneruleversionnumber>4</timezoneruleversionnumber>
+</bot>
