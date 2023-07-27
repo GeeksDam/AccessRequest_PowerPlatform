@@ -1,0 +1,49 @@
+kind: AdaptiveDialog
+beginDialog:
+  kind: OnConversationStart
+  id: main
+  actions:
+    - kind: Question
+      id: question_hXFYCa
+      interruptionPolicy:
+        allowInterruption: true
+
+      variable: init:Topic.Var1
+      prompt: Hello I'm {System.Bot.Name} how can i help you 
+      entity:
+        kind: EmbeddedEntity
+        definition:
+          kind: ClosedListEntity
+          items:
+            - id: Make a Visitor Application
+              displayName: Make a Visitor Application
+
+            - id: Create a support ticket
+              displayName: Create a support ticket
+
+            - id: HR functions
+              displayName: HR functions
+
+    - kind: ConditionGroup
+      id: conditionGroup_A47Pun
+      conditions:
+        - id: conditionItem_DnwpRk
+          condition: =Topic.Var1 = 'cr0f6_mainBot.topic.ConversationStart.main.question_hXFYCa'.'Make a Visitor Application'
+          actions:
+            - kind: BeginDialog
+              id: B1l1bo
+              dialog: cr0f6_mainBot.topic.Untitled
+
+        - id: conditionItem_z8CFej
+          condition: =Topic.Var1 = 'cr0f6_mainBot.topic.ConversationStart.main.question_hXFYCa'.'Create a support ticket'
+          actions:
+            - kind: SendActivity
+              id: sendActivity_52EcXC
+              activity: Feature is unavalibale at the momment 
+
+            - kind: BeginDialog
+              id: Mokc7k
+              dialog: cr0f6_mainBot.topic.StartOver
+
+        - id: conditionItem_qOAbfy
+          condition: =Topic.Var1 = 'cr0f6_mainBot.topic.ConversationStart.main.question_hXFYCa'.'HR functions'

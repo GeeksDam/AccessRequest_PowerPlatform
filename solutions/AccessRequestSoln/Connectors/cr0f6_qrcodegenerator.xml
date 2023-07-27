@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Connector xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <connectorid>be49be14-2b9f-4ac7-92cc-680b4d2bd4df</connectorid>
+  <description></description>
+  <displayname>QrCodeGenerator</displayname>
+  <iconbrandcolor>#007ee5</iconbrandcolor>
+  <name>cr0f6_qrcodegenerator</name>
+  <connectortype>1</connectortype>
+  <openapidefinition>/Connector/cr0f6_qrcodegenerator_openapidefinition.json</openapidefinition>
+  <connectionparameters>/Connector/cr0f6_qrcodegenerator_connectionparameters.json</connectionparameters>
+  <policytemplateinstances>/Connector/cr0f6_qrcodegenerator_policytemplateinstances.json</policytemplateinstances>
+  <iconblob>/Connector/cr0f6_qrcodegenerator_iconblob.Png</iconblob>
+</Connector>
