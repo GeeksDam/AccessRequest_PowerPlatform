@@ -1,2 +1,3 @@
 # AccessRequest_PowerPlatform
-Power Platfomr solution to create Visitors Access in orgnozation ssuing QRCpode as the mode of authroization 
+Power Platform solution to create Visitors Access for guest
+Access can be created from a ChatBot (SingleGuest) CanvasApp(MutipleGuest)
