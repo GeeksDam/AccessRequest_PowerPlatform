@@ -5,7 +5,7 @@
   <Status>Ready</Status>
   <CreatedByClientVersion>3.23072.22.0</CreatedByClientVersion>
   <MinClientVersion>3.23072.22.0</MinClientVersion>
-  <Tags>{"primaryDeviceWidth":"1495","primaryDeviceHeight":"651","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.23072.22","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20230724T213215Z-3.23072.22.0"}</Tags>
+  <Tags>{"primaryDeviceWidth":"1495","primaryDeviceHeight":"651","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Tablet","publisherVersion":"3.23072.22","minimumRequiredApiVersion":"2.2.0","hasComponent":"false","hasUnlockedComponent":"false","isUnifiedRootApp":"false","sienaVersion":"20230728T132235Z-3.23073.23.0"}</Tags>
   <IsCdsUpgraded>0</IsCdsUpgraded>
   <GalleryItemId xsi:nil="true"></GalleryItemId>
   <BackgroundColor>RGBA(0,176,240,1)</BackgroundColor>
